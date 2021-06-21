@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
             let astronauntActive = false; 
             let astronauntSkills = []; 
             let astronauntPicture = "";
-            for(i=0; i<jsonLength-1; i++){
+            for(i=0; i<jsonLength; i++) {
                 astronauntFirstName = json[i].firstName;
                 astronauntLastName = json[i].lastName;
                 astronauntHours = json[i].hours; 
@@ -22,25 +22,26 @@ window.addEventListener("load", function() {
                 astronauntSkills = json[i].skills; 
                 astronauntPicture = json[i].picture;
                 console.log(astronauntActive);
-                // if(astronauntActive === true) {   
-                //     astronauntActive.active.style.color = "green";
-                //    }
-            }
-            const div = document.getElementById("container");
-            // Add HTML that includes the JSON data
-            div.innerHTML = `
-            <div class="astronaut">  
-                <div class="bio">
-                    <h3>${astronauntFirstName} ${astronauntLastName}</h3>
-                    <ul>
-                        <li>Hours in space: ${astronauntHours}</li>
-                        <li>Active: ${astronauntActive}</li>
-                        <li>Skills: ${astronauntSkills}</li>
-                    </ul>
+                if(astronauntActive === true) {   
+                   document.getElementById("active").style.color = "green";
+                }
+                const div = document.getElementById("container");
+                // Add HTML that includes the JSON data
+                div.innerHTML += `
+                <div class="astronaut">  
+                    <div class="bio">
+                        <h3>${astronauntFirstName} ${astronauntLastName}</h3>
+                        <ul>
+                            <li>Hours in space: ${astronauntHours}</li>
+                            <li id="active">Active: ${astronauntActive}</li>
+                            <li>Skills: ${astronauntSkills}</li>
+                        </ul>
+                    </div>
+                    <img class="avatar" src="${astronauntPicture}">
                 </div>
-                <img class="avatar" src="${astronauntPicture}">
-            </div>
-            `;            
+                `;
+            }
+            
         });
     }); 
 });
