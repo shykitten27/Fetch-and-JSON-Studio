@@ -15,8 +15,8 @@ window.addEventListener("load", function() {
             let astronauntSkills = json[i].skills; 
             let astronauntPicture = json[i].picture;
             for(i=0; i<jsonLength-1; i++){
-                if(json[i].active === true) {   
-                   json[i].active.style.color = "green";
+                if(astronauntActive === true) {   
+                    astronauntActive.active.style.color = "green";
                    }
             }
             const div = document.getElementById("container");
