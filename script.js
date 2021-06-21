@@ -8,16 +8,23 @@ window.addEventListener("load", function() {
             to set the attribute type, i.e style.color = "green" */
 
             let jsonLength = json.length;
-            let astronauntFirstName = json[i].firstName;
-            let astronauntLastName = json[i].lastName;
-            let astronauntHours = json[i].hours; 
-            let astronauntActive = json[i].active; 
-            let astronauntSkills = json[i].skills; 
-            let astronauntPicture = json[i].picture;
+            let astronauntFirstName = "";
+            let astronauntLastName = "";
+            let astronauntHours = 0; 
+            let astronauntActive = false; 
+            let astronauntSkills = []; 
+            let astronauntPicture = "";
             for(i=0; i<jsonLength-1; i++){
-                if(astronauntActive === true) {   
-                    astronauntActive.active.style.color = "green";
-                   }
+                astronauntFirstName = json[i].firstName;
+                astronauntLastName = json[i].lastName;
+                astronauntHours = json[i].hours; 
+                astronauntActive = json[i].active; 
+                astronauntSkills = json[i].skills; 
+                astronauntPicture = json[i].picture;
+                console.log(astronauntActive);
+                // if(astronauntActive === true) {   
+                //     astronauntActive.active.style.color = "green";
+                //    }
             }
             const div = document.getElementById("container");
             // Add HTML that includes the JSON data
